@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Meraki.Cli</id>
+    <version>1.0.0</version>
+    <description>Creates a template Meraki project for .NET Core 3.1.
+
+To install (or update) the template, type:
+
+	dotnet new -i Meraki.Cli
+
+If you do not specify the namespace with --name, the folder name is used instead
+
+Once installed, go to an empty folder and type:
+
+	dotnet new Meraki [--name Project.Namespace]
+
+Then modify the appsettings.json file to include your Meraki API Key.  After this, build and run with:
+
+	dotnet run
+
+This should provide some basic information about your Meraki account to demonstrate a working project.
+
+	 </description>
+    <authors>David Bond</authors>
+    <owners>Panoramic Data Limited</owners>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+	 <icon>Icon.png</icon>
+	 <projectUrl>https://github.com/panoramicdata/Meraki.Cli</projectUrl>
+	 <releaseNotes>
+		Initial release
+	 </releaseNotes>
+	 <copyright>Panoramic Data Limited 2020</copyright>
+  </metadata>
+</package>
