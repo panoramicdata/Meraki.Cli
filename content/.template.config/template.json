@@ -17,6 +17,12 @@
 			"datatype": "bool",
 			"description": "If specified, skips the automatic restore of the project on create.",
 			"defaultValue": "false"
+		},
+		"apiKey": {
+			"type": "parameter",
+			"datatype": "string",
+			"replaces": "YourApiKeyHere",
+			"description": "If specified, sets the Meraki API token in the appsettings.json file."
 		}
 	},
 	"postActions": [{
