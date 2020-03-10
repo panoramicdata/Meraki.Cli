@@ -20,3 +20,7 @@ To create a new project using the template, use:
 or
 
 > dotnet new Meraki --name MyProject.MyNameSpace
+
+or
+
+> dotnet new Meraki --name MyProject.MyNameSpace --apiKey=YourApiKey
