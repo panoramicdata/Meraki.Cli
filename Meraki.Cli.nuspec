@@ -25,6 +25,7 @@ You should then inspect and modify the contents of Application.cs.
 	 </description>
     <authors>David Bond</authors>
     <owners>Panoramic Data Limited</owners>
+	 <license type="expression">MIT</license>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
