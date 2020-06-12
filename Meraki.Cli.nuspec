@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
-  <metadata>
-    <id>Meraki.Cli</id>
-    <version>1.0.2</version>
-    <description>Creates a template Meraki project for .NET Core 3.1.
+<package
+	xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+	<metadata>
+		<id>Meraki.Cli</id>
+		<version>1.0.3</version>
+		<description>Creates a template Meraki project for .NET Core 3.1.
 
 To install (or update) the template, type:
 
@@ -23,17 +24,17 @@ This should provide some basic information about your Meraki account to demonstr
 You should then inspect and modify the contents of Application.cs.
 
 	 </description>
-    <authors>David Bond</authors>
-    <owners>Panoramic Data Limited</owners>
-	 <license type="expression">MIT</license>
-    <packageTypes>
-      <packageType name="Template" />
-    </packageTypes>
-	 <icon>Icon.png</icon>
-	 <projectUrl>https://github.com/panoramicdata/Meraki.Cli</projectUrl>
-	 <releaseNotes>
+		<authors>David Bond</authors>
+		<owners>Panoramic Data Limited</owners>
+		<license type="expression">MIT</license>
+		<packageTypes>
+			<packageType name="Template" />
+		</packageTypes>
+		<icon>Icon.png</icon>
+		<projectUrl>https://github.com/panoramicdata/Meraki.Cli</projectUrl>
+		<releaseNotes>
 		Added parameters
 	 </releaseNotes>
-	 <copyright>Panoramic Data Limited 2020</copyright>
-  </metadata>
+		<copyright>Panoramic Data Limited 2020</copyright>
+	</metadata>
 </package>
