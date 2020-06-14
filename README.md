@@ -24,7 +24,7 @@ or
 
 or
 
-> dotnet new Meraki --name MyProject.MyNameSpace --apiKey=YourApiKey
+> dotnet new Meraki --name MyProject.MyNameSpace --apiKey YourApiKey
 
 ## Testing
 
