@@ -3,7 +3,7 @@
 	xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Meraki.Cli</id>
-		<version>1.0.7</version>
+		<version>1.0.8</version>
 		<description>Creates a template Meraki project for .NET Core 3.1.
 
 To install (or update) the template, type:
@@ -33,7 +33,7 @@ You should then inspect and modify the contents of Application.cs.
 		<icon>Icon.png</icon>
 		<projectUrl>https://github.com/panoramicdata/Meraki.Cli</projectUrl>
 		<releaseNotes>
-		Added parameters
+		.gitignore improvements
 	 </releaseNotes>
 		<copyright>Panoramic Data Limited 2020</copyright>
 	</metadata>

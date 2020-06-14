@@ -5,7 +5,7 @@ Nuget package for dotnet new Meraki
 ## Build
 
 To build, from the root directory (and already having installed the latest version of nuget), type:
-> nuget pack .\Meraki.Cli.nuspec
+>
 
 ## Upload
 You can then upload it to [https://www.nuget.org/packages/manage/upload](https://www.nuget.org/packages/manage/upload)
