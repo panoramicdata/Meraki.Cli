@@ -71,7 +71,7 @@ namespace Meraki.Cli
 				// Get the networks:
 				var networks = await _merakiClient
 				.Networks
-				.GetAllAsync(organization.Id)
+				.GetAllAsync(organization.Id, cancellationToken: cancellationToken)
 				.ConfigureAwait(false);
 
 				_logger.LogInformation($"- {organization.Name} with {networks.Count} network{(networks.Count > 1 ? "s" : "")}");
