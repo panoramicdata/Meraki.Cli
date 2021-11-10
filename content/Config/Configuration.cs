@@ -1,3 +1,5 @@
+using Meraki.Api;
+
 namespace Meraki.Cli.Config
 {
 	/// <summary>
@@ -9,12 +11,12 @@ namespace Meraki.Cli.Config
 		/// <summary>
 		/// Meraki credentials
 		/// </summary>
-		public MerakiCredentials MerakiCredentials { get; set; }
+		public MerakiClientOptions MerakiClientOptions { get; set; } = new();
 
 		/// <summary>
 		/// DELETE THIS!
 		/// Provided as a first example
 		/// </summary>
-		public string Setting1 { get; set; }
+		public string Setting1 { get; set; } = string.Empty;
 	}
 }

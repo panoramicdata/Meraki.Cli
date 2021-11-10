@@ -1,16 +1,13 @@
-using Meraki.Cli.Config;
 using Meraki.Api;
-using Microsoft.Extensions.Logging;
+using Meraki.Cli.Config;
 using Microsoft.Extensions.Options;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Meraki.Cli
 {
 	/// <summary>
 	/// The main application
 	/// </summary>
-	internal class Application
+	internal class Application : BackgroundService
 	{
 		/// <summary>
 		/// Configuration
@@ -28,53 +25,66 @@ namespace Meraki.Cli
 		private readonly ILogger<Application> _logger;
 
 		/// <summary>
+		/// The application lifetime
+		/// </summary>
+		private readonly IHostApplicationLifetime _lifetime;
+
+		/// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="options"></param>
 		/// <param name="loggerFactory"></param>
 		public Application(
 			IOptions<Configuration> options,
-			ILoggerFactory loggerFactory)
+			ILoggerFactory loggerFactory,
+			IHostApplicationLifetime lifetime)
 		{
 			// Store the config
 			_config = options.Value;
 
-			// Validate the credentials
-			_config.MerakiCredentials.Validate();
-
 			// Create a logger
 			_logger = loggerFactory.CreateLogger<Application>();
 
-			// Create a portal client
+			// Create a Meraki client
 			_merakiClient = new MerakiClient(
-				new MerakiClientOptions { ApiKey = _config.MerakiCredentials.ApiKey },
-				_logger
+				_config.MerakiClientOptions,
+				loggerFactory.CreateLogger<MerakiClient>()
 			);
+
+			// Store the lifetime
+			_lifetime = lifetime;
 		}
 
-		public async Task RunAsync(CancellationToken cancellationToken)
+		protected override async Task ExecuteAsync(CancellationToken cancellationToken)
 		{
-			// Use _logger for logging
-			_logger.LogInformation($"Application start.  Setting1 is set to {_config.Setting1}");
-
-			// Use asynchronous calls to _merakiClient to interact with the portal
-			var organizations = await _merakiClient
-				.Organizations
-				.GetAllAsync(cancellationToken)
-				.ConfigureAwait(false);
-
-			_logger.LogInformation($"You have access to {organizations.Count} organization{(organizations.Count > 1 ? "s" : "")}:");
-
-			// Summarize each one:
-			foreach (var organization in organizations)
+			try
 			{
-				// Get the networks:
-				var networks = await _merakiClient
-				.Networks
-				.GetAllAsync(organization.Id, cancellationToken: cancellationToken)
-				.ConfigureAwait(false);
+				// Use _logger for logging
+				_logger.LogInformation("Application start.  Setting1 is set to {setting1}", _config.Setting1);
 
-				_logger.LogInformation($"- {organization.Name} with {networks.Count} network{(networks.Count > 1 ? "s" : "")}");
+				// Use asynchronous calls to _merakiClient to interact with the portal
+				var organizations = await _merakiClient
+					.Organizations
+					.GetAllAsync(cancellationToken)
+					.ConfigureAwait(false);
+
+				_logger.LogInformation("You have access to {organizationCount} organization(s):", organizations.Count);
+
+				// Summarize each one:
+				foreach (var organization in organizations)
+				{
+					// Get the networks:
+					var networks = await _merakiClient
+					.Networks
+					.GetAllAsync(organization.Id, cancellationToken: cancellationToken)
+					.ConfigureAwait(false);
+
+					_logger.LogInformation("- {organizationName} with {networkCount} network(s)", organization.Name, networks.Count);
+				}
+			}
+			finally
+			{
+				_lifetime.StopApplication();
 			}
 		}
 	}
