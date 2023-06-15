@@ -23,19 +23,19 @@ dotnet new install Meraki.Cli
 To create a new project using the template, use:
 
 ```
-dotnet new Meraki --name MyProject.MyNameSpace --apiKey YourApiKey
+dotnet new meraki --name MyProject.MyNameSpace --apiKey YourApiKey
 ```
 
 or
 
 ```
-dotnet new Meraki --name MyProject.MyNameSpace
+dotnet new meraki --name MyProject.MyNameSpace
 ```
 
 or
 
 ``` powershell
-dotnet new Meraki
+dotnet new meraki
 ```
 
 ## Testing
