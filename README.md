@@ -5,26 +5,37 @@ Nuget package for dotnet new Meraki
 ## Build
 
 To build, from the root directory (and already having installed the latest version of nuget), type:
->
+``` powershell
+nuget pack .\Meraki.Cli.nuspec -NoDefaultExcludes -Exclude .vs -Exclude .suo
+```
 
 ## Upload
 You can then upload it to [https://www.nuget.org/packages/manage/upload](https://www.nuget.org/packages/manage/upload)
 
 ## Installation
 To install the template, use:
-> dotnet new -i Meraki.Cli
+``` powershell
+dotnet new install Meraki.Cli
+```
 
 ## Project creation
 To create a new project using the template, use:
-> dotnet new Meraki
+
+```
+dotnet new Meraki --name MyProject.MyNameSpace --apiKey YourApiKey
+```
 
 or
 
-> dotnet new Meraki --name MyProject.MyNameSpace
+```
+dotnet new Meraki --name MyProject.MyNameSpace
+```
 
 or
 
-> dotnet new Meraki --name MyProject.MyNameSpace --apiKey YourApiKey
+``` powershell
+dotnet new Meraki
+```
 
 ## Testing
 
