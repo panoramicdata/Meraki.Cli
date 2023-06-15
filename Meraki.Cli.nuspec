@@ -3,12 +3,12 @@
 	xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Meraki.Cli</id>
-		<version>6.0.0</version>
-		<description>Creates a template Meraki project for .NET 6.0.
+		<version>7.0.1</version>
+		<description>Creates a template Meraki project for .NET 7.0.
 
 To install (or update) the template, type:
 
-	dotnet new -i Meraki.Cli
+	dotnet new install Meraki.Cli
 
 Once installed, go to an empty folder and type:
 
@@ -33,9 +33,9 @@ You should then inspect and modify the contents of Application.cs.
 		<icon>Icon.png</icon>
 		<projectUrl>https://github.com/panoramicdata/Meraki.Cli</projectUrl>
 		<releaseNotes>
-Moved to .NET 6.0
+Moved to .NET 7.0
 Improved best practices throughout
 		 </releaseNotes>
-		<copyright>Panoramic Data Limited 2021</copyright>
+		<copyright>Panoramic Data Limited 2023</copyright>
 	</metadata>
 </package>
