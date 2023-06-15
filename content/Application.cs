@@ -83,6 +83,10 @@ namespace Meraki.Cli
 					_logger.LogInformation("- {organizationName} with {networkCount} network(s)", organization.Name, networks.Count);
 				}
 			}
+			catch(Exception e)
+			{
+				_logger.LogError(e, "Application error {Message}", e.Message);
+			}
 			finally
 			{
 				_lifetime.StopApplication();
