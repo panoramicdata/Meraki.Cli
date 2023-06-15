@@ -1,22 +1,21 @@
 using Meraki.Api;
 
-namespace Meraki.Cli
+namespace Meraki.Cli;
+
+/// <summary>
+/// Application configuration, loaded from an appsettings.json file upon execution
+/// You can modify/extend this class and provide your own settings
+/// </summary>
+internal class Configuration
 {
 	/// <summary>
-	/// Application configuration, loaded from an appsettings.json file upon execution
-	/// You can modify/extend this class and provide your own settings
+	/// Meraki credentials
 	/// </summary>
-	internal class Configuration
-	{
-		/// <summary>
-		/// Meraki credentials
-		/// </summary>
-		public MerakiClientOptions MerakiClientOptions { get; set; } = new();
+	public MerakiClientOptions MerakiClientOptions { get; set; } = new();
 
-		/// <summary>
-		/// DELETE THIS!
-		/// Provided as a first example
-		/// </summary>
-		public string Setting1 { get; set; } = string.Empty;
-	}
+	/// <summary>
+	/// DELETE THIS!
+	/// Provided as a first example
+	/// </summary>
+	public string Setting1 { get; set; } = string.Empty;
 }
