@@ -38,11 +38,6 @@
 			Moved to .NET 7.0
 			Improved best practices throughout
 		</releaseNotes>
-		<readme>README.md</readme>
 		<copyright>Panoramic Data Limited 2023</copyright>
 	</metadata>
-	<files>
-		<file src="README.md" target="\" />
-		<file src="Icon.png" target="\" />
-	</files>
 </package>
