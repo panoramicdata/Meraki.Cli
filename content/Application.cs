@@ -65,7 +65,7 @@ namespace Meraki.Cli
 				// Use asynchronous calls to _merakiClient to interact with the portal
 				var organizations = await _merakiClient
 					.Organizations
-					.GetAllAsync(cancellationToken)
+					.GetOrganizationsAsync(cancellationToken)
 					.ConfigureAwait(false);
 
 				_logger.LogInformation("You have access to {organizationCount} organization(s):", organizations.Count);
@@ -75,8 +75,9 @@ namespace Meraki.Cli
 				{
 					// Get the networks:
 					var networks = await _merakiClient
+					.Organizations
 					.Networks
-					.GetAllAsync(organization.Id, cancellationToken: cancellationToken)
+					.GetOrganizationNetworksAsync(organization.Id, cancellationToken: cancellationToken)
 					.ConfigureAwait(false);
 
 					_logger.LogInformation("- {organizationName} with {networkCount} network(s)", organization.Name, networks.Count);
