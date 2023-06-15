@@ -1,5 +1,4 @@
-﻿using Meraki.Cli.Config;
-using Serilog;
+﻿using Serilog;
 using Serilog.Debugging;
 
 namespace Meraki.Cli

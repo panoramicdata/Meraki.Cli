@@ -1,5 +1,4 @@
 using Meraki.Api;
-using Meraki.Cli.Config;
 using Microsoft.Extensions.Options;
 
 namespace Meraki.Cli
@@ -68,28 +67,46 @@ namespace Meraki.Cli
 					.GetOrganizationsAsync(cancellationToken)
 					.ConfigureAwait(false);
 
-				_logger.LogInformation("You have access to {organizationCount} organization(s):", organizations.Count);
+				_logger.LogInformation("You have access to {OrganizationCount} organization(s).", organizations.Count);
 
 				// Summarize each one:
 				foreach (var organization in organizations)
 				{
-					// Get the networks:
-					var networks = await _merakiClient
-					.Organizations
-					.Networks
-					.GetOrganizationNetworksAsync(organization.Id, cancellationToken: cancellationToken)
-					.ConfigureAwait(false);
+					var networks = await GetNetworksAsync(organization, cancellationToken)
+						.ConfigureAwait(false);
 
-					_logger.LogInformation("- {organizationName} with {networkCount} network(s)", organization.Name, networks.Count);
+					_logger.LogInformation(
+						"- {OrganizationName} with {NetworkCount} network(s)",
+						organization.Name,
+						networks.Count);
 				}
 			}
-			catch(Exception e)
+			catch (Exception ex)
 			{
-				_logger.LogError(e, "Application error {Message}", e.Message);
+				_logger.LogError(ex, "An error occurred: {Message}", ex.Message);
 			}
 			finally
 			{
 				_lifetime.StopApplication();
+			}
+		}
+
+		private async Task<List<Network>> GetNetworksAsync(
+			Organization organization,
+			CancellationToken cancellationToken)
+		{
+			// Get the networks:
+			try
+			{
+				return await _merakiClient
+				.Organizations
+				.Networks
+				.GetOrganizationNetworksAsync(organization.Id, cancellationToken: cancellationToken)
+				.ConfigureAwait(false);
+			}
+			catch(Exception ex) when (ex.Message.Contains("404 (Not Found)"))
+			{
+				return new List<Network>();
 			}
 		}
 	}

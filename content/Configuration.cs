@@ -1,6 +1,6 @@
 using Meraki.Api;
 
-namespace Meraki.Cli.Config
+namespace Meraki.Cli
 {
 	/// <summary>
 	/// Application configuration, loaded from an appsettings.json file upon execution
