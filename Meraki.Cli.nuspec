@@ -3,27 +3,29 @@
 	xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Meraki.Cli</id>
-		<version>7.0.4</version>
+		<version>7.0.5</version>
 		<description>Creates a template Meraki project for .NET 7.0.
 
-To install (or update) the template, type:
+			To install (or update) the template, type:
 
-	dotnet new install Meraki.Cli
+			dotnet new install Meraki.Cli
 
-Once installed, go to an empty folder and type:
+			Once installed, go to an empty folder and type:
 
-	dotnet new meraki [--name Project.Namespace] [--apiKey=YourApiKey]
+			dotnet new meraki [--name Project.Namespace] [--apiKey=YourApiKey]
 
-If you do not specify the namespace with --name, the folder name is used instead.
-If you do not specify an API key, modify the appsettings.json file.  After this, build and run with:
+			If you do not specify the namespace with --name, the folder name is used instead.
+			If you do not specify an API key, modify the appsettings.json file. After this, build
+			and run with:
 
-	dotnet run
+			dotnet run
 
-This should provide some basic information about your Meraki account to demonstrate a working project.
+			This should provide some basic information about your Meraki account to demonstrate a
+			working project.
 
-You should then inspect and modify the contents of Application.cs.
+			You should then inspect and modify the contents of Application.cs.
 
-	 </description>
+		</description>
 		<authors>David Bond</authors>
 		<owners>Panoramic Data Limited</owners>
 		<license type="expression">MIT</license>
@@ -33,9 +35,14 @@ You should then inspect and modify the contents of Application.cs.
 		<icon>Icon.png</icon>
 		<projectUrl>https://github.com/panoramicdata/Meraki.Cli</projectUrl>
 		<releaseNotes>
-Moved to .NET 7.0
-Improved best practices throughout
-		 </releaseNotes>
+			Moved to .NET 7.0
+			Improved best practices throughout
+		</releaseNotes>
+		<readme>README.md</readme>
 		<copyright>Panoramic Data Limited 2023</copyright>
 	</metadata>
+	<files>
+		<file src="README.md" target="\" />
+		<file src="Icon.png" target="\" />
+	</files>
 </package>
