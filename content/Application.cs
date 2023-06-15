@@ -82,6 +82,10 @@ internal class Application : BackgroundService
 					networks.Count);
 			}
 		}
+		catch (TaskCanceledException)
+		{
+			_logger.LogWarning("Ctrl+C pressed.  Stopping.");
+		}
 		catch (Exception ex)
 		{
 			_logger.LogError(ex, "An error occurred: {Message}", ex.Message);
@@ -89,6 +93,7 @@ internal class Application : BackgroundService
 		finally
 		{
 			_lifetime.StopApplication();
+			_logger.LogInformation("Stopped.");
 		}
 	}
 

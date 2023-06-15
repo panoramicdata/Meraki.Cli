@@ -20,7 +20,14 @@ public static class Program
 						.Configure<Configuration>(context.Configuration.GetSection("Configuration"))
 						;
 				})
-				.UseSerilog((context, _, config) => config.ReadFrom.Configuration(context.Configuration).Enrich.FromLogContext())
+				.UseSerilog((context, _, config) => config
+					.ReadFrom
+					.Configuration(context.Configuration)
+					.Enrich
+					.FromLogContext()
+					.Enrich
+					.WithComputed("SourceContextName", "Substring(SourceContext, LastIndexOf(SourceContext, '.') + 1)")
+				)
 				.Build()
 				.RunAsync();
 		}
