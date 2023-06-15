@@ -6,10 +6,8 @@ Nuget package for dotnet new Meraki
 
 To build, from the root directory (and already having installed the latest version of nuget), type:
 ``` powershell
-nuget pack .\Meraki.Cli.nuspec -NoDefaultExcludes -Exclude .vs -Exclude .suo -Exclude ps1
+nuget pack .\Meraki.Cli.nuspec -NoDefaultExcludes -Exclude .vs -Exclude .suo
 ```
-...or run the Build.ps1 file at a powershell prompt.
-
 ## Upload
 You can then upload it to [https://www.nuget.org/packages/manage/upload](https://www.nuget.org/packages/manage/upload)
 
