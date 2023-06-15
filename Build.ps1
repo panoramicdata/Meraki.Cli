@@ -1,0 +1,1 @@
+nuget pack .\Meraki.Cli.nuspec -NoDefaultExcludes -Exclude .ps1 -Exclude .vs -Exclude .suo
