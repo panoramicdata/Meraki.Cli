@@ -12,8 +12,7 @@ To install (or update) the template, type:
 
 Once installed, go to an empty folder and type:
 
-	dotnet new m
-	eraki [--name Project.Namespace] [--apiKey=YourApiKey]
+	dotnet new meraki [--name Project.Namespace] [--apiKey=YourApiKey]
 
 If you do not specify the namespace with --name, the folder name is used instead.
 If you do not specify an API key, modify the appsettings.json file.  After this, build and run with:
