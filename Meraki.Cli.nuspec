@@ -3,7 +3,7 @@
 	xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Meraki.Cli</id>
-		<version>7.0.1</version>
+		<version>7.0.2</version>
 		<description>Creates a template Meraki project for .NET 7.0.
 
 To install (or update) the template, type:
@@ -12,7 +12,8 @@ To install (or update) the template, type:
 
 Once installed, go to an empty folder and type:
 
-	dotnet new Meraki [--name Project.Namespace] [--apiKey=YourApiKey]
+	dotnet new m
+	eraki [--name Project.Namespace] [--apiKey=YourApiKey]
 
 If you do not specify the namespace with --name, the folder name is used instead.
 If you do not specify an API key, modify the appsettings.json file.  After this, build and run with:
