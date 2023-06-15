@@ -1,4 +1,5 @@
 using Meraki.Api;
+using Meraki.Api.Data;
 using Microsoft.Extensions.Options;
 
 namespace Meraki.Cli
