@@ -12,7 +12,7 @@ You can then upload it to [https://www.nuget.org/packages/manage/upload](https:/
 
 ## Installation
 To install the template, use:
-> dotnet new -i Meraki.Cli
+> dotnet new install Meraki.Cli
 
 ## Project creation
 To create a new project using the template, use:
