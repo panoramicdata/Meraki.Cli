@@ -3,7 +3,7 @@
 	xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Meraki.Cli</id>
-		<version>7.0.3</version>
+		<version>7.0.4</version>
 		<description>Creates a template Meraki project for .NET 7.0.
 
 To install (or update) the template, type:
