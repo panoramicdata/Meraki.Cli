@@ -65,7 +65,7 @@ internal class Application : BackgroundService
 			// Use asynchronous calls to _merakiClient to interact with the portal
 			var organizations = await _merakiClient
 				.Organizations
-				.GetOrganizationsAsync(cancellationToken)
+				.GetOrganizationsAsync(cancellationToken:cancellationToken)
 				.ConfigureAwait(false);
 
 			_logger.LogInformation("You have access to {OrganizationCount} organization(s).", organizations.Count);
