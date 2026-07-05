@@ -1,31 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Worker">
-
-	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<LangVersion>latest</LangVersion>
-		<Nullable>enable</Nullable>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<None Include="appsettings.json">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Meraki.Api" Version="1.*" />
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.*" />
-		<PackageReference Include="Nerdbank.GitVersioning" Version="3.*">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="Serilog" Version="2.*" />
-		<PackageReference Include="Serilog.Extensions.Hosting" Version="7.*" />
-		<PackageReference Include="Serilog.Settings.Configuration" Version="7.*" />
-		<PackageReference Include="Serilog.Sinks.Console" Version="4.*" />
-		<PackageReference Include="System.Text.Json" Version="7.*" />
-		<PackageReference Include="Serilog.Expressions" Version="3.*" />
-	</ItemGroup>
-
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Meraki.Api" Version="1.*" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.*" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.*">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Serilog" Version="2.*" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="7.*" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="7.*" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.*" />
+    <PackageReference Include="System.Text.Json" Version="7.*" />
+    <PackageReference Include="Serilog.Expressions" Version="3.*" />
+  </ItemGroup>
 </Project>
