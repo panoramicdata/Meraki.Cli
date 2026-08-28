@@ -12,6 +12,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageId>Meraki.Cli</PackageId>
     <RepositoryUrl>https://github.com/panoramicdata/Meraki.Cli</RepositoryUrl>
+    <NeutralResourcesLanguage>en</NeutralResourcesLanguage>
   </PropertyGroup>
   <ItemGroup>
     <None Include="appsettings.json">
