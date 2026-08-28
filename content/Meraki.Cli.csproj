@@ -10,6 +10,8 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageId>Meraki.Cli</PackageId>
+    <RepositoryUrl>https://github.com/panoramicdata/Meraki.Cli</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
     <None Include="appsettings.json">
