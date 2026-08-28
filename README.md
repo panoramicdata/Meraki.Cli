@@ -1,3 +1,7 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/grade/Meraki.Cli)](https://app.codacy.com/gh/panoramicdata/Meraki.Cli/dashboard)
+
 # Meraki.Cli
 
 Nuget package for dotnet new Meraki
