@@ -7,7 +7,7 @@ namespace Meraki.Cli;
 /// <summary>
 /// The main application
 /// </summary>
-internal class Application : BackgroundService
+internal sealed class Application : BackgroundService
 {
 	/// <summary>
 	/// Configuration
@@ -56,6 +56,7 @@ internal class Application : BackgroundService
 		_lifetime = lifetime;
 	}
 
+	/// <inheritdoc />
 	protected override async Task ExecuteAsync(CancellationToken cancellationToken)
 	{
 		try
@@ -98,6 +99,9 @@ internal class Application : BackgroundService
 		}
 	}
 
+	/// <summary>
+	/// Gets the networks for an organization, or an empty list if none are found
+	/// </summary>
 	private async Task<List<Network>> GetNetworksAsync(
 		Organization organization,
 		CancellationToken cancellationToken)
@@ -106,14 +110,14 @@ internal class Application : BackgroundService
 		try
 		{
 			return await _merakiClient
-			.Organizations
-			.Networks
-			.GetOrganizationNetworksAsync(organization.Id, cancellationToken: cancellationToken)
-			.ConfigureAwait(false);
+				.Organizations
+				.Networks
+				.GetOrganizationNetworksAsync(organization.Id, cancellationToken: cancellationToken)
+				.ConfigureAwait(false);
 		}
-		catch(Exception ex) when (ex.Message.Contains("404 (Not Found)"))
+		catch (Exception ex) when (ex.Message.Contains("404 (Not Found)"))
 		{
-			return new List<Network>();
+			return [];
 		}
 	}
 }
