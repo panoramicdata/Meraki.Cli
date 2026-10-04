@@ -34,6 +34,7 @@ internal class Application : BackgroundService
 	/// </summary>
 	/// <param name="options"></param>
 	/// <param name="loggerFactory"></param>
+	/// <param name="lifetime"></param>
 	public Application(
 		IOptions<Configuration> options,
 		ILoggerFactory loggerFactory,

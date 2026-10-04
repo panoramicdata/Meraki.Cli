@@ -3,8 +3,15 @@ using Serilog.Debugging;
 
 namespace Meraki.Cli;
 
+/// <summary>
+/// Program entry point
+/// </summary>
 public static class Program
 {
+	/// <summary>
+	/// Application entry point
+	/// </summary>
+	/// <param name="args">Command line arguments</param>
 	public static async Task Main(string[] args)
 	{
 		SelfLog.Enable(msg => Console.Error.WriteLine(msg));
