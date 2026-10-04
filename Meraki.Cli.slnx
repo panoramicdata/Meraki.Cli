@@ -9,11 +9,11 @@
 		<File Path="Directory.Packages.props" />
 		<File Path="global.json" />
 		<File Path="LICENSE" />
-		<File Path="Meraki.Cli.nuspec" />
 		<File Path="Publish.ps1" />
 		<File Path="README.md" />
 		<File Path="SECURITY.md" />
 		<File Path="version.json" />
 	</Folder>
 	<Project Path="content/Meraki.Cli.csproj" />
+	<Project Path="package/Meraki.Cli.Template.csproj" />
 </Solution>
