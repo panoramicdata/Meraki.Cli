@@ -6,7 +6,7 @@ namespace Meraki.Cli;
 /// Application configuration, loaded from an appsettings.json file upon execution
 /// You can modify/extend this class and provide your own settings
 /// </summary>
-internal class Configuration
+internal sealed class Configuration
 {
 	/// <summary>
 	/// Meraki credentials
