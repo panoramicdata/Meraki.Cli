@@ -54,6 +54,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <NeutralResourcesLanguage>en</NeutralResourcesLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="..\content\**\*" Exclude="..\content\**\bin\**;..\content\**\obj\**;..\content\content.sln" Pack="true" PackagePath="content\%(RecursiveDir)%(Filename)%(Extension)" />
