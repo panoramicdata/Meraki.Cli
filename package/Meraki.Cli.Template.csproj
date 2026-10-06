@@ -52,6 +52,7 @@
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <NeutralResourcesLanguage>en</NeutralResourcesLanguage>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="..\content\**\*" Exclude="..\content\**\bin\**;..\content\**\obj\**;..\content\content.sln" Pack="true" PackagePath="content\%(RecursiveDir)%(Filename)%(Extension)" />
