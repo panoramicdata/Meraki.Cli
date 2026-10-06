@@ -5,11 +5,11 @@
 	"dotnet restore" in the repository root fail with "more than one project or solution file".
 -->
 <Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>net10.0</TargetFramework>
-		<PackageId>Meraki.Cli</PackageId>
-		<PackageType>Template</PackageType>
-		<Description>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <PackageId>Meraki.Cli</PackageId>
+    <PackageType>Template</PackageType>
+    <Description>
 			Creates a template Meraki project for .NET 10.0.
 
 			To install (or update) the template, type:
@@ -31,44 +31,40 @@
 
 			You should then inspect and modify the contents of Application.cs.
 		</Description>
-		<PackageReleaseNotes>
+    <PackageReleaseNotes>
 			Moved to .NET 10.0
 			Improved best practices throughout
 		</PackageReleaseNotes>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageIcon>Icon.png</PackageIcon>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageProjectUrl>https://github.com/panoramicdata/Meraki.Cli</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/panoramicdata/Meraki.Cli</RepositoryUrl>
-
-		<!-- A template package carries content, not an assembly. -->
-		<IncludeBuildOutput>false</IncludeBuildOutput>
-		<ContentTargetFolders>content</ContentTargetFolders>
-		<EnableDefaultItems>false</EnableDefaultItems>
-		<!-- The template lives in content/.template.config, and NuGet drops dot-files and dot-folders by default. -->
-		<NoDefaultExcludes>true</NoDefaultExcludes>
-		<GenerateDocumentationFile>false</GenerateDocumentationFile>
-		<SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
-		<!-- NU5128: no lib/ref assemblies for the target framework, which is the point of a template. -->
-		<NoWarn>$(NoWarn);NU5128</NoWarn>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<Content Include="..\content\**\*"
-				 Exclude="..\content\**\bin\**;..\content\**\obj\**;..\content\content.sln"
-				 Pack="true"
-				 PackagePath="content\%(RecursiveDir)%(Filename)%(Extension)" />
-		<!-- content/Meraki.Cli.csproj has no package versions of its own: they come from central package management.
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/panoramicdata/Meraki.Cli</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/panoramicdata/Meraki.Cli</RepositoryUrl>
+    <!-- A template package carries content, not an assembly. -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <!-- The template lives in content/.template.config, and NuGet drops dot-files and dot-folders by default. -->
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <!-- NU5128: no lib/ref assemblies for the target framework, which is the point of a template. -->
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="..\content\**\*" Exclude="..\content\**\bin\**;..\content\**\obj\**;..\content\content.sln" Pack="true" PackagePath="content\%(RecursiveDir)%(Filename)%(Extension)" />
+    <!-- content/Meraki.Cli.csproj has no package versions of its own: they come from central package management.
 			 Ship the repository's file so a generated project can restore, and the versions stay in one place. -->
-		<Content Include="..\Directory.Packages.props" Pack="true" PackagePath="content\Directory.Packages.props" />
-		<None Include="..\Icon.png" Pack="true" PackagePath="" />
-		<None Include="..\README.md" Pack="true" PackagePath="" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Nerdbank.GitVersioning">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-	</ItemGroup>
+    <Content Include="..\Directory.Packages.props" Pack="true" PackagePath="content\Directory.Packages.props" />
+    <None Include="..\Icon.png" Pack="true" PackagePath="" />
+    <None Include="..\README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Nerdbank.GitVersioning">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>
