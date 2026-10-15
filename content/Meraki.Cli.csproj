@@ -13,6 +13,7 @@
     <PackageId>Meraki.Cli</PackageId>
     <RepositoryUrl>https://github.com/panoramicdata/Meraki.Cli</RepositoryUrl>
     <NeutralResourcesLanguage>en</NeutralResourcesLanguage>
+    <PackageIcon>Logo.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup>
     <None Include="appsettings.json">
@@ -31,5 +32,8 @@
     <PackageReference Include="Serilog.Settings.Configuration" />
     <PackageReference Include="Serilog.Sinks.Console" />
     <PackageReference Include="Serilog.Expressions" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Logo.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
