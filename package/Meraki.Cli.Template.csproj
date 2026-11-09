@@ -50,8 +50,8 @@
     <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
     <!-- NU5128: no lib/ref assemblies for the target framework, which is the point of a template. -->
     <NoWarn>$(NoWarn);NU5128</NoWarn>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <!-- No build output means an empty symbols package, which NuGet refuses (NU5017). -->
+    <IncludeSymbols>false</IncludeSymbols>
     <NeutralResourcesLanguage>en</NeutralResourcesLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <ImplicitUsings>enable</ImplicitUsings>
