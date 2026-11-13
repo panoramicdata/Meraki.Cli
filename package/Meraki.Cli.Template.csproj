@@ -10,7 +10,7 @@
     <PackageId>Meraki.Cli</PackageId>
     <PackageType>Template</PackageType>
     <Description>
-			Creates a template Meraki project for .NET 10.0.
+			Creates a template Meraki project for .NET.
 
 			To install (or update) the template, type:
 

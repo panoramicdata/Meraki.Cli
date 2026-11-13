@@ -6,6 +6,8 @@
 
 Nuget package for dotnet new Meraki
 
+Supports .NET 11.0.
+
 ## Build
 
 To build, from the root directory (and already having installed the latest version of nuget), type:
