@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/grade/Meraki.Cli)](https://app.codacy.com/gh/panoramicdata/Meraki.Cli/dashboard)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/3ceb7e7f316b4f16b957f2607462069a)](https://app.codacy.com/gh/panoramicdata/Meraki.Cli/dashboard)
 
 # Meraki.Cli
 
